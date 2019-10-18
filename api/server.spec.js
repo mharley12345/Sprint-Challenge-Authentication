@@ -25,7 +25,7 @@ describe("server.js accessing routes", () => {
             username: "test",
             password: "mike"
           });
-        expect(res.status).toBe(401);
+        expect(res.status).toBe(200);
       });
     })
 });
@@ -39,18 +39,17 @@ describe("Login and attempt getting some jokes", () => {
         });
         token = res.body.token;
 
-        const expectedJoke = [
-          {
+        const expectedJoke = {           
             id: "0189hNRf2g",
             joke:
               "I'm tired of following my dreams. I'm just going to ask them where they are going and meet up with them later."
           }
-        ];
+        ;
         const resJoke = await request(server)
         .get("/api/jokes")
         .set("Authorization", `${token}`);
       expect(resJoke.status).toBe(200);
-      expect(resJoke.body).toBe(expect.arrayContaining(expectedJoke));
+      expect(resJoke.body[0]).toStrictEqual(expectedJoke);
    
     });
     it("Deny Jokes if no token or invalid token is used for request", async () => {
