@@ -9,10 +9,10 @@ describe("server.js accessing routes", () => {
         const res = await request(server)
           .post("/api/auth/login")
           .send({
-            username: "dad",
-            password: "joke"
+            username: "test1234",
+            password: "mike"
           });
-        expect(res.status).toBe(401);
+        expect(res.status).toBe(200);
       })
       it("throws error if login info is missing", async () => {
         const res = await request(server).post("/api/auth/login");
@@ -22,10 +22,10 @@ describe("server.js accessing routes", () => {
         const res = await request(server)
           .post("/api/auth/login")
           .send({
-            username: "test",
+            username: "test4545",
             password: "mike"
           });
-        expect(res.status).toBe(200);
+        expect(res.status).toBe(401);
       });
     })
 });

@@ -40,10 +40,10 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the purpose of using _sessions_?
 
-               A way to authenicate and keep a user logged in using cookies stored in the users browser 
+               A way to authenicate and keep a user logged in using cookies or jsonwebtoken stored in the users browser 
 
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
-        It encrypts the password making stroage secure
+        It encrypts the password making stroage secure 
 
 - [ ] What does bcrypt do to slow down attackers?
 
